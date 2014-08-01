@@ -1,0 +1,14 @@
+rootComponent:
+    className: App.component.Component
+    template: defaultsection
+    containers:
+        nextSection:
+            field: nextSection
+            types:
+                -
+                    modelType: testModel
+                    component: testComponent
+
+pageComponent:
+    className: App.component.Component
+    template: test

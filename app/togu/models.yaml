@@ -1,0 +1,27 @@
+rootModel:
+    className: App.model.Model
+    label: Page settings
+    description: This is the main model of the website
+    hiddenInGrid: true
+    section:
+        leaf: false
+        children:
+            testModel:
+                label: "Page"
+                #defaultText: text
+        constraints:
+            min: 1
+                      
+pageModel:
+    className: App.model.Model
+    label: Page Model
+    description: This is the test model
+    section:
+        leaf: true
+    modelTree:
+        label: [ Index ]
+    fields:
+        text:
+            label: Text
+            model: { type: string, defaultValue: Togu }
+            form: { xtype: fields_editor_text, tooltip: Text }

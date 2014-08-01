@@ -1,0 +1,57 @@
+groups:
+    - id: 1
+      name: "Contributors"
+      applications:
+          - id: "siteeditor"
+            name: "Site Editor"
+            class: "Siteeditor"
+            method : "showEditor"
+            hidden : false
+
+          - id: "imageList"
+            name: "Images"
+            class: "Images"
+            method : "showImageListWindow"
+            hidden : false
+            
+          - id: "imageChooser"
+            name: "Images"
+            class: "Images"
+            method : "showImageChooser"
+            hidden : true
+
+          - id: "urlChooser"
+            name: "Url Chooser"
+            class: "Siteeditor"
+            method : "showUrlChooser"
+            hidden : true
+            
+          - id: "entityChooser"
+            name: "Entity Chooser"
+            class: "Entities"
+            method : "showEntityChooser"
+            hidden : true
+            
+          - id: "imageUploader"
+            name: "Upload images"
+            class: "Images"
+            method : "showImageUploader"
+
+          - id: "entities"
+            name: "Entities"
+            class: "Entities"
+            method : "showEntitiesWindow"
+            hidden : false
+            
+          - id: "logout"
+            name: "Logout"
+            class: "Cmf"
+            method : "logout"
+            hidden : false            
+            
+          - id: "changePassword"
+            name: "Change Password"
+            class: "Cmf"
+            method : "changePassword"
+            hidden : false            
+                        

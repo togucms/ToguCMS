@@ -1,0 +1,85 @@
+{
+    "name": "togucms/togu-cms",
+    "license": "GPL v3",
+    "authors": [
+        {
+            "name": "Alessandro Siragusa",
+            "email": "alessandro.siragusa@gmail.com"
+        }
+    ],
+    "type": "project",
+    "description": "The \"Togu CMS\" distribution",
+    "autoload": {
+        "psr-0": { "": "src/" }
+    },
+    "require": {
+        "php": ">=5.4.0",
+        "symfony/symfony": "~2.4",
+        "doctrine/orm": "~2.2,>=2.2.3",
+        "doctrine/doctrine-bundle": "~1.2",
+        "twig/extensions": "~1.0",
+        "symfony/assetic-bundle": "~2.3",
+        "symfony/swiftmailer-bundle": "~2.3",
+        "symfony/monolog-bundle": "~2.4",
+        "sensio/distribution-bundle": "~2.3",
+        "sensio/framework-extra-bundle": "~3.0",
+        "sensio/generator-bundle": "~2.3",
+        "incenteev/composer-parameter-handler": "~2.0",
+        "friendsofsymfony/user-bundle": "~2.0@dev",
+
+	"doctrine/doctrine-fixtures-bundle": "2.2.*",
+        "doctrine/phpcr-bundle": "1.1.*@dev",
+        "symfony-cmf/core-bundle": "1.2.*@dev",
+        "symfony-cmf/content-bundle": "dev-master",
+	"symfony-cmf/menu-bundle": "1.2.*@dev",
+        "symfony-cmf/block-bundle": "1.2.*@dev",
+        "symfony-cmf/routing-bundle": "1.3.*@dev",
+        "symfony-cmf/media-bundle": "1.2.*@dev",
+       	"symfony-cmf/seo-bundle": "1.1.*@dev",
+       	"symfony-cmf/search-bundle": "1.1.*@dev",
+       	"doctrine/phpcr-odm": "dev-master",
+	"symfony-cmf/symfony-cmf": "1.2.*@dev",
+        "sonata-project/seo-bundle": "1.1.*",
+
+	"jackalope/jackalope-doctrine-dbal": "1.1.*",
+
+        "asiragusa/extjs-bundle": "dev-master",
+	"masterminds/html5": "dev-master",
+	"sonata-project/core-bundle": "dev-master",
+        "sonata-project/media-bundle": "dev-master",
+        "sonata-project/admin-bundle": "dev-master",
+        "sonata-project/doctrine-orm-admin-bundle": "dev-master",
+        "doctrine/doctrine-cache-bundle": "1.0.*"
+    },
+    "scripts": {
+        "post-install-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ],
+        "post-update-cmd": [
+            "Incenteev\\ParameterHandler\\ScriptHandler::buildParameters",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::buildBootstrap",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::clearCache",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installAssets",
+            "Sensio\\Bundle\\DistributionBundle\\Composer\\ScriptHandler::installRequirementsFile"
+        ]
+    },
+    "config": {
+        "bin-dir": "bin"
+    },
+    "repositories": [
+    ],
+    "extra": {
+        "symfony-app-dir": "app",
+        "symfony-web-dir": "web",
+        "incenteev-parameters": {
+            "file": "app/config/parameters.yml"
+        },
+        "branch-alias": {
+            "dev-master": "1.0-dev"
+        }
+    }
+}

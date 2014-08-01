@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta name="viewport" content=" minimum-scale=1.0, maximum-scale=1.0, width=device-width, user-scalable=no">
+        <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+        {{ sonata_seo_metadatas() }}
+        {{ sonata_seo_link_canonical() }}
+        {{ sonata_seo_lang_alternates() }}
+        {{ sonata_seo_title() }}
+
+        {% block includes %}
+			{% if isAdminUI %}
+				<link rel="stylesheet" href="{{ asset('frontend/alohaeditor-0.26.2/aloha/css/aloha.css') }}" media="screen" type="text/css"/>
+			{% endif %} 
+
+			{% for css in cssFiles() %}
+				<link rel="stylesheet" href="{{ asset(css) }}" media="screen" type="text/css"/>
+			{% endfor %}
+
+        {% endblock %}
+
+        {% block top_scripts %}
+            <!-- Le HTML5 shim, for IE6-8 support of HTML5 elements -->
+            <!--[if lt IE 9]>
+            <script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+            <script src="{{ asset('frontend/vendor/respond/dest/respond.min.js') }}"></script>
+            <![endif]-->
+        {% endblock %}
+    </head>
+    <body>
+
+        <div id="container">
+        	<noscript> 
+				{{ toguContents(cmfMainContent) }}
+			</noscript>
+		</div>
+
+			{% if isAdminUI %}
+			  <script type="text/javascript" src="{{ asset('frontend/alohaeditor-0.26.2/aloha/lib/require.js') }}"></script>
+              <script type="text/javascript" src="{{ asset('frontend/alohaeditor-0.26.2/aloha/lib/vendor/jquery-1.7.2.js') }}"></script>
+			<script src="{{ asset('frontend/alohaeditor-0.26.2/aloha/lib/aloha.js') }}"
+                                   data-aloha-plugins="common/ui,
+                                                        common/format,
+                                                        common/list,
+                                                        common/link,
+                                                        common/highlighteditables">
+              </script>
+			  <script type="text/javascript" src="{{ asset('frontend/aloha-settings/aloha.js') }}"></script>
+			{% endif %} 
+
+        <form id="history-form" style="display: none;">
+            <input type="hidden" id="history-field" />
+            <iframe id="history-frame"></iframe>
+        </form>
+
+
+		<script type="text/javascript">
+			var jsData = {{ jsData | serialize('json', serializationContext) | raw }}; 
+			var settings = {{ settings | serialize('json') | raw }}; 
+		</script>
+
+        {% block bottom_scripts %}
+			{% for js in jsFiles() %}
+				<script type="text/javascript" src="{{asset(js)}}"></script>
+			{% endfor %}
+        {% endblock %}
+        
+    </body>
+</html>

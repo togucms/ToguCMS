@@ -1,0 +1,86 @@
+imports:
+    - { resource: config.yml }
+
+framework:
+    router:
+        resource: "%kernel.root_dir%/config/routing_dev.yml"
+        strict_requirements: true
+    profiler: { only_exceptions: false }
+
+web_profiler:
+    toolbar: true
+    intercept_redirects: false
+
+monolog:
+    handlers:
+        main:
+            type:   stream
+            path:   "%kernel.logs_dir%/%kernel.environment%.log"
+            level:  debug
+        console:
+            type:   console
+            bubble: false
+        # uncomment to get logging in your browser
+        # you may have to allow bigger header sizes in your Web server configuration
+        #firephp:
+        #    type:   firephp
+        #    level:  info
+        #chromephp:
+        #    type:   chromephp
+        #    level:  info
+
+assetic:
+    use_controller: true
+
+#swiftmailer:
+#    delivery_address: me@example.com
+
+
+doctrine_phpcr:
+    session:
+        backend:
+            type: doctrinedbal
+            # requires DoctrineCacheBundle
+            # caches:
+            #     meta: doctrine_cache.providers.phpcr_meta
+            #     nodes: doctrine_cache.providers.phpcr_nodes
+            # enable logging
+            logging: true
+            # enable profiling in the debug toolbar.
+            profiling: true
+        workspace: default
+#        username: admin
+#        password: admin
+    
+    odm:
+#        auto_generate_proxy_classes: "%kernel.debug%"
+        default_document_manager: default
+        
+        document_managers:
+            default:
+                session: default
+                auto_mapping: true
+#                mappings:
+#                    ApplicationSonataMediaBundle:
+#                        prefix: Application\Sonata\MediaBundle\PHPCR
+                
+#                    SonataMediaBundle:
+#                        prefix: Sonata\MediaBundle\PHPCR
+        
+fos_rest:
+    param_fetcher_listener: true
+    body_listener:          true
+    format_listener:        true
+    view:
+        view_response_listener: force
+    body_converter:
+        enabled: true
+        validate: true
+
+sensio_framework_extra:
+    view:    { annotations: false }
+    router:  { annotations: true }
+    request: { converters: true }
+
+twig:
+    exception_controller: 'FOS\RestBundle\Controller\ExceptionController::showAction'    

@@ -1,0 +1,11 @@
+-
+    text: Default
+    leaf: false
+    children:
+        -
+            text: togu-logo.png
+            leaf: true
+            media: 
+                fileName: togu-logo.png
+                context: default
+                provider: sonata.media.provider.image

@@ -1,0 +1,116 @@
+{
+  "name": "togu",
+  "version": "1.0.0",
+  "title": "Togu CMS",
+  "main": "Gruntfile.js",
+  "homepage": "http://togu.io",
+  "dependencies": {},
+  "devDependencies": {
+    "grunt-contrib-clean": "~0.4.1",
+    "grunt-contrib-jshint": "~0.10.0",
+    "grunt-contrib-uglify": "~0.5.0",
+    "grunt-contrib-qunit": "~0.2.2",
+    "grunt-contrib-watch": "~0.4.4",
+    "grunt": "~0.4.5",
+    "load-grunt-tasks": "~0.6.0",
+    "grunt-contrib-compass": "~0.9.0",
+    "grunt-contrib-copy": "~0.5.0",
+    "grunt-contrib-symlink": "~0.3.0",
+    "grunt-sencha-build": "~0.1.5",
+    "grunt-concurrent": "~0.5.0",
+    "grunt-contrib-imagemin": "~0.7.1",
+    "grunt-filerev": "~0.2.1",
+    "grunt-symfony2": "~0.4.0"
+  },
+  "javascripts": [
+    "frontend/vendor/modernizr/modernizr.js",
+    "frontend/vendor/jquery/dist/jquery.js",
+
+    "frontend/togu/Ext_core/Ext.js",
+    "frontend/togu/Ext_core/Observable.js",
+    "frontend/togu/core/ioc/DependencyProvider.js",
+    "frontend/togu/core/ioc/Injector.js",
+    "frontend/togu/extensions/Ext.more.js",
+    "frontend/togu/extensions/String.more.js",
+    "frontend/togu/extensions/jQuery.more.js",
+    "frontend/togu/extensions/Browser.more.js",
+    "frontend/togu/core/BaseClass.js",
+    "frontend/togu/core/History.js",
+    "frontend/togu/core/model/Model.js",
+    "frontend/togu/core/ComponentList.js",
+    "frontend/togu/core/Factory.js",
+    "frontend/togu/core/ComponentFactory.js",
+    "frontend/togu/core/ModelFactory.js",
+    "frontend/togu/core/UpdaterFactory.js",
+    "frontend/togu/core/Template.js",
+    "frontend/togu/core/updater/Abstract.js",
+    "frontend/togu/core/updater/Attr.js",
+    "frontend/togu/core/updater/Input.js",
+    "frontend/togu/core/updater/Cls.js",
+    "frontend/togu/core/updater/Html.js",
+    "frontend/togu/core/updater/Image.js",
+    "frontend/togu/core/updater/Link.js",
+    "frontend/togu/core/updater/Style.js",    
+    "frontend/togu/core/SiteController.js",
+    "frontend/togu/core/ComponentMgr.js",
+    "frontend/togu/core/container/Container.js",
+    "frontend/togu/core/component/Component.js",
+    "frontend/togu/core/ImageManager.js",
+    "frontend/togu/core/ResourceMgr.js",
+    "frontend/togu/core/AlohaManager.js",
+
+    "frontend/compiled/Templates.js",
+    "frontend/compiled/ComponentTypes.js",
+    "frontend/compiled/ModelTypes.js",
+    
+    
+    "frontend/togu/core/SectionMgr.js"
+  ],
+  "tempDir": ".tmp",
+  "js": {
+    "outputDir": "frontend/js"
+  },
+  "sass": {
+    "sassDir": "frontend/sass",
+    "cssDir": "frontend/css",
+    "imagesDir": "frontend/img",
+    "generatedImagesDir": "frontend/img-generated",
+    "fontsDir": "frontend/fonts",
+    "httpFontsPath": "../fonts",
+    "httpImagesPath": "../img",
+    "httpGeneratedImagesPath": "../img-generated",
+    "require": [
+      "bootstrap-sass",
+      "font-awesome-sass"
+    ]
+  },
+  "symfony": {
+    "dataDir": "app/data"
+  },
+  "admin": {
+    "srcDir": "admin",
+    "linkDir": "web/admin",
+    "interfaceDir": "admin/interface",
+    "buildDir": "build/production/Admin",
+    "installDir": "web/admin/interface"
+  },
+  "frontend": {
+    "webDir": "web",
+    "srcDir": "frontend",
+    "destDir": "web/frontend",
+    "compiledDir": "web/frontend/compiled"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://bitbucket.org/salletti/hal-sf2"
+  },
+  "keywords": [
+    "Togu",
+    "CMS"
+  ],
+  "author": "Alessandro Siragusa <alessandro.siragusa@gmail.com>",
+  "license": "GPLv3"
+}

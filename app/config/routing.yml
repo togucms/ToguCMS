@@ -1,0 +1,41 @@
+backoffice_login_check:
+    pattern: /backoffice/login
+
+backoffice_logout:
+    pattern: /backoffice/logout
+
+togu_admin_bundle:
+    resource: "@ToguAdminBundle/Resources/config/routing.xml"
+    prefix:   /backoffice
+
+togu_admin_bundle_rest:
+    resource: "@ToguAdminBundle/Resources/config/routing.rest.yml"
+    prefix:   /backoffice/admin
+    type: rest
+
+tpg_extjs:
+  resource: "@TpgExtjsBundle/Resources/config/routing.yml"
+  prefix:   /extjs
+
+togu_media_rest:
+  resource: "@ToguMediaBundle/Resources/config/routing.rest.yml"
+  prefix:   /backoffice/images
+  type: rest
+
+togu_admin_redirect:
+  path: /admin/
+  defaults:
+     _controller: FrameworkBundle:Redirect:redirect
+     route: togu_admin_interface
+     permanent: true
+
+togu_admin_interface:
+  path: /admin/interface/
+  defaults:
+    _controller: ToguAdminBundle:AdminInterface:index
+        
+        
+application:
+  resource: "@ApplicationToguApplicationModelsBundle/Resources/config/routing/routing.yml"
+  prefix:   /
+               

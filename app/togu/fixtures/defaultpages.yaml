@@ -1,0 +1,14 @@
+rootModel:
+    type: rootModel
+    _section: 
+        title: Website
+        leaf: false
+    nextSection:
+        -
+            _page:
+                title: "Index"
+            _section:
+                title: "/"
+                leaf: true 
+            type: testModel
+            text: Togu
