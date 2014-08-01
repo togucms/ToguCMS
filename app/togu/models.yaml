@@ -12,7 +12,7 @@ rootModel:
         constraints:
             min: 1
                       
-pageModel:
+testModel:
     className: App.model.Model
     label: Page Model
     description: This is the test model

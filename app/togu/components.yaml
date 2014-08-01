@@ -9,6 +9,6 @@ rootComponent:
                     modelType: testModel
                     component: testComponent
 
-pageComponent:
+testComponent:
     className: App.component.Component
     template: test

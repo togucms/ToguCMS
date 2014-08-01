@@ -1,0 +1,3 @@
+<div cmf-template="test">
+	Welcome to {{text}} !
+</div>

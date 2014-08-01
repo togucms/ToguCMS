@@ -22,6 +22,7 @@
   "dependencies": {
     "jquery": "~1.11.1",
     "modernizr": "~2.8.3",
-    "respond": "~1.4.2"
+    "respond": "~1.4.2",
+    "togu": "*"
   }
 }

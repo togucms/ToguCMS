@@ -1,3 +1,2 @@
 <div cmf-template="defaultsection" cmf-nextsection="">
-Welcome to {{text}} !
 </div>
