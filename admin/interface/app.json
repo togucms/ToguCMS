@@ -1,0 +1,10 @@
+{
+    "name": "Admin",
+
+    "requires": [
+	"deft@0.9.0?",
+	"Cmf@1.0.0?"
+    ],
+
+    "id": "c5d23f3a-44eb-4a4a-8021-234bf8bcfe77"
+}
