@@ -40,6 +40,7 @@ module.exports = function(grunt) {
 			dist: {
 				files:[
 				       { expand: true, cwd: '<%= pkg.admin.srcDir %>/<%= pkg.admin.buildDir %>/', src:['**'], dest: '<%= pkg.admin.installDir %>' }, 
+				       { expand: true, cwd: '<%= pkg.frontend.srcDir %>/vendor/togu', src:['aloha*/**'], dest: '<%= pkg.frontend.destDir %>' },
 				       { expand: true, cwd: '<%= pkg.frontend.srcDir %>/', src:['aloha*/**'], dest: '<%= pkg.frontend.destDir %>' } 
 				]
 			}
