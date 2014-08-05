@@ -34,7 +34,10 @@ togu_admin_interface:
   defaults:
     _controller: ToguAdminBundle:AdminInterface:index
         
-        
+togu_frontend:
+  resource: "@ToguFrontendBundle/Resources/config/routing.xml"
+  prefix:   /
+
 application:
   resource: "@ApplicationToguApplicationModelsBundle/Resources/config/routing/routing.yml"
   prefix:   /
