@@ -15,7 +15,7 @@ trait TestModel {
 	 * @JMS\Type("string")
 	 * @JMS\SerializedName("text")
 	 * @var string 
-	 * @PHPCR\String()
+	 * @PHPCR\String() 
 	 */
 	protected $text;
 	
@@ -57,7 +57,7 @@ trait TestModel {
 	 * 
 	 * @JMS\SerializedName("sectionConfig") 
 	 * @var Section 
-	 * @PHPCR\ReferenceOne(strategy="hard",cascade="all")
+	 * @PHPCR\ReferenceOne(strategy="hard",cascade="all") 
 	 */
 	protected $sectionConfig;
 	
@@ -98,6 +98,49 @@ trait TestModel {
 				? $params['sectionConfig'] 
 				: new Section());
 		return $this;
+    }
+    
+
+	/**
+	 * 
+	 * @JMS\Type("link")
+	 * @JMS\SerializedName("link")
+	 * @var Model 
+	 * @TOGU\Type(type="link")
+	 * @JMS\Accessor(getter="getLink",setter="setLink")
+	 */
+	protected $link;
+	
+    /**
+     * Set link
+	 *
+     * @param Model $link
+     * @return Model
+     */
+    public function setLink($link)
+    {
+        return $this;
+    }
+
+    /**
+     * Get link
+     *
+     * @return Model
+     */
+    public function getLink()
+    {
+        return $this->getSectionConfig()->getPage();
+    }
+    
+    /**
+     * Initialize link
+     *
+     * @return Model
+     */
+    public function initLink($params)
+    {
+        $this->setLink(isset($params['link']) ? $params['link'] : NULL);
+        return $this;
     }
     
 

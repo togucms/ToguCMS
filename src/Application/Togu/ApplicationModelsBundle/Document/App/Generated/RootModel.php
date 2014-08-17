@@ -14,7 +14,7 @@ trait RootModel {
 	 * 
 	* @JMS\Exclude
 	 * @var Section 
-	 * @PHPCR\ReferenceOne(strategy="hard",cascade="all")
+	 * @PHPCR\ReferenceOne(strategy="hard",cascade="all") 
 	 */
 	protected $sectionConfig;
 	
@@ -62,7 +62,7 @@ trait RootModel {
 	 * 
 	 * @JMS\Exclude
 	 * @var Model 
-	 * @PHPCR\Nodename()
+	 * @PHPCR\Nodename() 
 	 */
 	protected $nodeName;
 	
