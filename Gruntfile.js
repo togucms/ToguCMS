@@ -178,6 +178,9 @@ module.exports = function(grunt) {
 		    options: {},
 		    cache_clear: {
 		        cmd: 'cache:clear',
+			args: {
+				'no-warmup': true
+			}
 		    },
 		    cache_clear_prod: {
 		        cmd: 'cache:clear',
@@ -298,24 +301,26 @@ module.exports = function(grunt) {
 //	grunt.registerTask('test', ['jshint', 'qunit']);
 	grunt.registerTask('test', ['jshint:gruntfile']);
 	
-	grunt.registerTask('build', ['clean', 'symlink:dev', 'test', 'compass:dev', 'symfonyDataFiles:dev', 'concurrent:watch']);
+	grunt.registerTask('build', ['clean', 'symlink:dev', 'test', 'compass:dev', 'sf2-console:cache_clear', 'sf2-console:togu_js_generate', 'symfonyDataFiles:dev', 'sencha:build']);
+	
+	grunt.registerTask('dev', ['clean', 'symlink:dev', 'test', 'compass:dev', 'sf2-console:cache_clear', 'sf2-console:togu_js_generate', 'symfonyDataFiles:dev', 'concurrent:watch']);
 	
 	grunt.registerTask('compile', [
-       'clean', 
-       'compass:dist', 
-       'createCompiledDir',
-       'sf2-console:cache_clear',
-       'sf2-console:togu_js_generate',
-       'uglify', 
-       'imagemin', 
-       'copy:fonts', 
-       'filerev:imagesAndFonts', 
-       'rewriteCss',
-       'filerev:jsAndCss', 
-       'symfonyDataFiles:prod',
-       'sencha:build', 
-       'copy:dist',
-       'sf2-console:cache_clear_prod'
+		'clean',
+		'compass:dist', 
+		'createCompiledDir',
+		'sf2-console:cache_clear',
+		'sf2-console:togu_js_generate',
+		'uglify', 
+		'imagemin', 
+		'copy:fonts', 
+		'filerev:imagesAndFonts', 
+		'rewriteCss',
+		'filerev:jsAndCss', 
+		'symfonyDataFiles:prod',
+		'sencha:build', 
+		'copy:dist',
+		'sf2-console:cache_clear_prod'
     ]);
 
 	// Default task.
