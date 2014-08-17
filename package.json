@@ -80,8 +80,6 @@
     "httpImagesPath": "../img",
     "httpGeneratedImagesPath": "../img-generated",
     "require": [
-      "bootstrap-sass",
-      "font-awesome-sass"
     ]
   },
   "symfony": {
